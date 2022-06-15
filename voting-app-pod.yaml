@@ -1,3 +1,4 @@
+#https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
 ---
 apiVersion: v1
 kind: Pod
@@ -9,6 +10,8 @@ metadata:
 spec:
   containers:
     - name: voting-app
-      image: 33fdf2945f6f
+      image: voting-app
       ports:
         - containerPort: 80
+      imagePullPolicy: Never
+  restartPolicy: Never
